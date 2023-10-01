@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <p class="logo"><img src="logo.png"></p>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div class="dropdown">
+          <a href="#">Accessories<i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Category 1</a>
+            <a href="#">Category 2</a>
+            <a href="#">Category 3</a>
+          </div>
+        </div> 
+        <div class="dropdown">
+          <a href="#">Services<i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Service 1</a>
+            <a href="#">Service 2</a>
+            <a href="#">Service 3</a>
+          </div>
+        </div> 
+        <div class="button-group">
+          <button class="button">Cart</button>
+          <button class="button">User Login</button>
+          <button class="button">Search</button>
+        </div>
+      </div>
+
+      <!-- home section begins -->
+
+      <section class="home">
+        
+<div class="slider-container">
+    <div class="slider-content">
+      <div class="slide">
+        <img src="bgmi.jpg" alt="Game 1">
+        <div class="game-info">
+          <h2>Game Name 1</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi quidem laborum ea ad corporis nulla, fuga qui tempora reprehenderit expedita vero praesentium alias, quasi deserunt error commodi! Soluta, error?</p>
+          <button class="download-button">Download Game</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="ff.jpg" alt="Game 2">
+        <div class="game-info">
+          <h2>Game Name 2</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi quidem laborum ea ad corporis nulla, fuga qui tempora reprehenderit expedita vero praesentium alias, quasi deserunt error commodi! Soluta, error?</p>
+          <button class="download-button">Download Game</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="cod.jpg" alt="Game 3">
+        <div class="game-info">
+          <h2>Game Name 3</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi quidem laborum ea ad corporis nulla, fuga qui tempora reprehenderit expedita vero praesentium alias, quasi deserunt error commodi! Soluta, error?</p>
+          <button class="download-button">Download Game</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="ff2.jpg" alt="Game 3">
+        <div class="game-info">
+          <h2>Game Name 3</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi quidem laborum ea ad corporis nulla, fuga qui tempora reprehenderit expedita vero praesentium alias, quasi deserunt error commodi! Soluta, error?</p>
+          <button class="download-button">Download Game</button>
+        </div>
+      </div>
+    </div>
+    <div class="arrow left">&#10094;</div>
+    <div class="arrow right">&#10095;</div>
+  </div>
+
+  <div class="dots"></div>
+    
+   </section>
+
+   <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.dots');
+  
+    function createDots() {
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        dot.dataset.slideIndex = index;
+        dot.addEventListener('click', () => showSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+  
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index == currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+  
+    function showSlide(index) {
+      if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+  
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+  
+      updateDots();
+    }
+  
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+  
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+  
+    document.querySelector('.left').addEventListener('click', prevSlide);
+    document.querySelector('.right').addEventListener('click', nextSlide);
+  
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+  
+    // Create and update dots
+    createDots();
+    showSlide(currentSlide);
+  </script>
+  
+
+   <!-- home section ends -->
+
+
+   <!-- testimonial section begins -->
+
+   <section id="testimonial">
+
+    <h1 class="main_heading">
+      testimonials
+    </h1>
+    
+<div class="testimonials">
+    <div class="testimonial">
+      <img src="user-1.png" alt="Person 1">
+      <h3>John Doe</h3>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum felis et sem elementum porttitor."</p>
+    </div>
+  
+    <div class="testimonial">
+      <img src="user-2.png" alt="Person 2">
+      <h3>Jane Doe</h3>
+      <p>"Praesent nec nisl vestibulum, euismod lectus a, bibendum turpis. Duis in quam sagittis, vulputate dolor et."</p>
+    </div>
+  
+    <div class="testimonial">
+      <img src="user-3.png" alt="Person 3">
+      <h3>Jim Doe</h3>
+      <p>"In vel est in tellus feugiat elementum. Vestibulum venenatis turpis at risus facilisis euismod."</p>
+    </div>
+  </div>
+   </section>
+
+   <!-- testimonial section ends -->
+
+  <!-- feature section starts -->
+
+  <section id="quality" class="quality">
+    <h1 class="main_heading">
+      features
+    </h1>
+    <div class="quality-container">
+      <div class="quality-child">
+        <i class="fa fa-truck"></i>
+        <p>Fastest Delivery</p>
+      </div>
+      <div class="quality-child">
+        <i class="fa fa-headphones"></i>
+        <p>Online Support</p>
+      </div>
+      <div class="quality-child">
+        <i class="fa fa-file"></i>
+        <p>Legitimacy</p>
+      </div>
+      <div class="quality-child">
+        <i class="fa fa-credit-card"></i>
+        <p>Affordable Prices</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- feature section ends -->
+
+   <!-- product section begins -->
+
+   <section id="products">
+
+    <h1 class="main_heading">
+      Our Products
+    </h1>
+
+    <div class="min-heading">
+      <h2>Best Sellers</h2>
+      <button>See All</button>
+    </div>
+
+    <div class="grid-container">
+  
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-1.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-2.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-3.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+      
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-4.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-5.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+      <div class="product-card">
+        <div class="image-holder">
+          <img src="product-6.jpg">
+        </div>
+        <div class="name-button">
+          <h>axton axton</h>
+          <Span>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-cart-arrow-down"></i></a>
+          </Span>
+        </div>
+        <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quae!</p>
+        <h class="rate">
+          $19
+        </h>
+      </span>
+      <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+      </div>
+
+    </div>
+
+   
+   </section>
+   
+
+   <!-- product section ended -->
+
+
+   <!-- features section begins -->
+
+  <section id="features">
+
+    <h1 class="main_heading">
+      Why Choose Axton?
+    </h1>
+
+    <div class="feature-container">
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-user-circle"></i>
+        <h3>Customer Service</h3>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam officiis ut quibusdam quisquam quos deleniti at totam corrupti impedit ex eum sint, quas laboriosam odio?</p>
+      </div>
+    </div>
+
+  </section>
+
+   <!-- features section ends -->
+
+   <!-- footer section starts -->
+
+  <section class="footer">
+    <img src="logo.png" alt="logo">
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Gaming Services</a></li>
+        <li><a href="#">Merch/Accessories</a></li>
+        <li><a href="#">Our Collection</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Sell To Us</a></li>
+        <li><a href="#">Rewards</a></li>
+        <li><a href="#">Tracking</a></li>
+      </ul>
+    </div>
+    <h3>Subscriber For updates</h3>
+    <div class="options">
+      <div class="mail-box">
+      <input type="email" name="email" placeholder="Email">
+      <input type="button" value="SUBSCRIBE">
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+   <!-- footer section ends -->
+</body>
+</html>
